@@ -671,6 +671,7 @@ var FilesView = React.createClass({
             <a href={Model.UrlToRepo(repo, match.Filename, null, rev)}>
               {match.Filename}
             </a>
+            <span className="matches-count">{match.Matches.length} matches</span>
           </div>
           <div className="file-body">
             {matches}
@@ -736,6 +737,7 @@ var ResultView = React.createClass({
           <div className="title">
             <span className="mega-octicon octicon-repo"></span>
             <span className="name">{Model.NameForRepo(result.Repo)}</span>
+            <span className="matches-count">{result.FilesWithMatch} files</span>
           </div>
           <FilesView matches={result.Matches}
               rev={result.Rev}
